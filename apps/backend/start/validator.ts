@@ -20,4 +20,4 @@ declare module '@vinejs/vine/types' {
   }
 }
 
-VineDate.transform((value) => DateTime.fromJSDate(value))
+VineDate.transform(value => DateTime.fromJSDate(value))

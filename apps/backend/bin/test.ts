@@ -34,7 +34,7 @@ const IMPORTER = (filePath: string) => {
 }
 
 new Ignitor(APP_ROOT, { importer: IMPORTER })
-  .tap((app) => {
+  .tap(app => {
     app.booting(async () => {
       await import('#start/env')
     })
@@ -42,21 +42,19 @@ new Ignitor(APP_ROOT, { importer: IMPORTER })
     app.listenIf(app.managedByPm2, 'SIGINT', () => app.terminate())
   })
   .testRunner()
-  .configure(async (app) => {
+  .configure(async app => {
     const { runnerHooks, ...config } = await import('../tests/bootstrap.js')
 
     processCLIArgs(process.argv.splice(2))
-    configure({
-      ...app.rcFile.tests,
-      ...config,
-      ...{
-        setup: runnerHooks.setup,
-        teardown: runnerHooks.teardown.concat([() => app.terminate()]),
-      },
-    })
+    configure(({
+	...app.rcFile.tests,
+	...config,
+	setup: runnerHooks.setup,
+	teardown: runnerHooks.teardown.concat([() => app.terminate()])
+}))
   })
   .run(() => run())
-  .catch((error) => {
+  .catch(error => {
     process.exitCode = 1
     prettyPrintError(error)
   })

@@ -15,7 +15,7 @@ class ApiSerializer extends BaseSerializer<{
    * Wraps all serialized data under this key in the response object.
    * Example: { data: [...] } instead of returning raw arrays/objects
    */
-  wrap: 'data' = 'data'
+  wrap = 'data' as const
 
   /**
    * Validates and defines pagination metadata structure for paginated responses.
@@ -26,7 +26,7 @@ class ApiSerializer extends BaseSerializer<{
   definePaginationMetaData(metaData: unknown): SimplePaginatorMetaKeys {
     if (!this.isLucidPaginatorMetaData(metaData)) {
       throw new Error(
-        'Invalid pagination metadata. Expected metadata to contain Lucid pagination keys'
+        'Invalid pagination metadata. Expected metadata to contain Lucid pagination keys',
       )
     }
     return metaData
@@ -48,7 +48,7 @@ const serialize = Object.assign(
     ) {
       return serializer.serializeWithoutWrapping(data, resolver ?? this.containerResolver)
     },
-  }
+  },
 ) as ApiSerializer['serialize'] & { withoutWrapping: ApiSerializer['serializeWithoutWrapping'] }
 
 /**
