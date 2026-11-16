@@ -1,32 +1,67 @@
 # Dependencies
-node_modules
+node_modules/
+.pnp
+.pnp.js
 
 # Build outputs
-build
-dist
-.turbo
+build/
+dist/
+dist-ssr/
+tmp/
+coverage/
 
-# Secrets
+# Environment variables
 .env
-.env.local
-.env.production.local
-.env.development.local
+.env.*
+!.env.test
+!.env.example
 
-# Temp files
-/tmp
-
-# Logs
-npm-debug.log
-yarn-error.log
+# Log files
 *.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
 
-# Editors
-.fleet
-.idea
-.vscode
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+count.txt
 
-# Platform specific
+# Frontend assets compiled code
+public/assets/
+public/build/
+
+# Cache directories
+.cache/
+.parcel-cache/
+.tanstack/
+.turbo/
+
+# Deployment
+.vercel/
+.netlify/
+.wrangler/
+
+# IDE/Editor directories
+.idea/
+.fleet/
+*.swp
+*.swo
+*~
+
+# OS generated files
 .DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
 
-# Frontend compiled assets
-public/assets
+# Temporary files
+*.tmp
+*.temp
+*.local

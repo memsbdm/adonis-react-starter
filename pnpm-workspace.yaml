@@ -1,0 +1,7 @@
+minimumReleaseAge: 4320 # 3 days
+packages:
+  - apps/*
+  - packages/*
+allowBuilds:
+  '@swc/core': true
+  lefthook: true

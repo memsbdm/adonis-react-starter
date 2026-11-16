@@ -3,38 +3,17 @@
   "ui": "tui",
   "tasks": {
     "build": {
-      "dependsOn": ["^build"],
-      "outputs": ["build/**", ".adonisjs/**"],
-      "env": [
-        "NODE_ENV",
-        "APP_KEY",
-        "HOST",
-        "PORT",
-        "LOG_LEVEL"
-      ]
+      "dependsOn": ["^build"]
+    },
+    "typecheck": {
+      "dependsOn": ["^typecheck"]
+    },
+    "test": {
+      "dependsOn": ["^build"]
     },
     "dev": {
       "cache": false,
       "persistent": true
-    },
-    "codegen": {
-      "cache": false
-    },
-    "test": {
-      "dependsOn": ["build"],
-      "cache": false
-    },
-    "lint": {
-      "dependsOn": ["^build"],
-      "outputs": []
-    },
-    "format": {
-      "outputs": [],
-      "cache": false
-    },
-    "typecheck": {
-      "dependsOn": ["^build"],
-      "outputs": []
     }
   }
 }
