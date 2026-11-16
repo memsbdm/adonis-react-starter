@@ -46,4 +46,5 @@ router.use([
  */
 export const middleware = router.named({
   auth: () => import('#identity/middleware/auth_middleware'),
+  requireSecretToken: () => import('#core/middleware/require_secret_token_middleware'),
 })

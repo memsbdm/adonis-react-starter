@@ -8,7 +8,12 @@ export type { Route, Path } from './schema.d.ts'
 const placeholder: any = {}
 
 const routes = {
-,
+  'health_checks': {
+    methods: ["GET","HEAD"],
+    pattern: '/health',
+    tokens: [[0,"health"]],
+    types: placeholder as Registry['health_checks']['types'],
+  },
 } as const satisfies Record<string, AdonisEndpoint>
 
 export { routes }
