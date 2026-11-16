@@ -7,4 +7,11 @@ export const controllers = {
   core: {
     HealthChecks: () => import('#app/core/controllers/health_checks_controller'),
   },
+  identity: {
+    GetMe: () => import('#app/identity/controllers/get_me_controller'),
+    IsAuthenticated: () => import('#app/identity/controllers/is_authenticated_controller'),
+    Login: () => import('#app/identity/controllers/login_controller'),
+    Logout: () => import('#app/identity/controllers/logout_controller'),
+    Register: () => import('#app/identity/controllers/register_controller'),
+  },
 }
