@@ -43,7 +43,7 @@
     "@adonisjs/session": "^8.3.0",
     "@adonisjs/shield": "^9.0.0",
     "@japa/api-client": "^3.2.1",
-    "@tuyau/core": "^1.3.0",
+    "@tuyau/core": "catalog:",
     "@vinejs/vine": "^4.4.0",
     "better-sqlite3": "^13.1.1",
     "luxon": "^3.7.2",
