@@ -2,14 +2,16 @@
   "name": "adonis-starter-kit",
   "type": "module",
   "scripts": {
-    "prepare": "lefthook install",
     "dev": "turbo dev --ui=tui",
+    "docker:up": "docker compose up -d",
+    "docker:down": "docker compose down",
     "format": "oxfmt --write .",
     "format:check": "oxfmt --check .",
     "lint": "oxlint --type-aware",
     "lint:fix": "oxlint --type-aware --fix",
-    "typecheck": "turbo typecheck",
-    "test": "turbo test"
+    "prepare": "lefthook install",
+    "test": "turbo test",
+    "typecheck": "turbo typecheck"
   },
   "devDependencies": {
     "@julr/tooling-configs": "^6.4.0",

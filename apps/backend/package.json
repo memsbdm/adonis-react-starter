@@ -36,8 +36,8 @@
     "@japa/api-client": "^3.2.1",
     "@tuyau/core": "catalog:",
     "@vinejs/vine": "^4.4.0",
-    "better-sqlite3": "^13.1.1",
     "luxon": "^3.7.2",
+    "pg": "^8.23.1",
     "reflect-metadata": "^0.2.2"
   },
   "devDependencies": {
@@ -48,6 +48,7 @@
     "@japa/runner": "^5.4.0",
     "@poppinss/ts-exec": "^1.5.2",
     "@types/luxon": "^3.7.6",
+    "@types/pg": "^8.23.1",
     "hot-hook": "^1.1.0",
     "pino-pretty": "^13.2.0",
     "youch": "^4.1.1"
