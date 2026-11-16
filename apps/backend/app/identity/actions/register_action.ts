@@ -10,14 +10,21 @@ interface Params {
 
 export class Register {
   async handle(params: Params) {
-    const user = await User.findBy('email', params.email)
+    const { fullName, email, password } = params
+    const user = await User.findBy('email', email)
 
     if (user) {
       return Result.err(new EmailAlreadyInUse())
     }
 
     try {
-      return Result.ok(await User.create(params))
+      return Result.ok(
+        await User.create({
+          fullName,
+          email,
+          password,
+        }),
+      )
     } catch (error) {
       if (
         error instanceof Error &&
