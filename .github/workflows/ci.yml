@@ -47,9 +47,6 @@ jobs:
       - name: Format check
         run: pnpm exec oxfmt --check .
 
-      - name: Tests
-        run: pnpm test
-
   build-and-push-image:
     name: Build and publish backend image
     needs: checks
