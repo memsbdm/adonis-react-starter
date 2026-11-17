@@ -21,7 +21,7 @@ export default class RegisterController {
     const payload = await request.validateUsing(RegisterController.validator)
     const res = await withTransaction(() => this.register.handle(payload))
 
-    Result.match(res, {
+    return await Result.match(res, {
       ok: async user => {
         await auth.use('web').login(user)
         return response.created()
