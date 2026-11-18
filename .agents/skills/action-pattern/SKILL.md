@@ -32,11 +32,11 @@ Inject shared services (like `TimeService`) via constructor DI. This allows mock
 
 ```typescript
 import { inject } from '@adonisjs/core'
-import { TimeService } from '#app/shared/services/time_service'
+import { TimeServiceContract } from '#app/shared/contracts/time_service_contract'
 
 @inject()
 export class MyAction {
-  constructor(private readonly timeService: TimeService) {}
+  constructor(private readonly timeService: TimeServiceContract) {}
 
   async handle(params: Params) {
     const now = this.timeService.now()
