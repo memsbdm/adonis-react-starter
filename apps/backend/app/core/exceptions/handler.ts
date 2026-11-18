@@ -1,6 +1,6 @@
 import app from '@adonisjs/core/services/app'
 import { type HttpContext, ExceptionHandler } from '@adonisjs/core/http'
-import ForbiddenException from './forbidden_exception.ts'
+import ForbiddenException from '#shared/exceptions/forbidden_exception'
 
 export default class HttpExceptionHandler extends ExceptionHandler {
   /**

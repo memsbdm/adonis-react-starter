@@ -1,7 +1,7 @@
 import type { NextFn } from '@adonisjs/core/types/http'
 import type { HttpContext } from '@adonisjs/core/http'
 import type { Authenticators } from '@adonisjs/auth/types'
-import ForbiddenException from '#app/core/exceptions/forbidden_exception'
+import ForbiddenException from '#shared/exceptions/forbidden_exception'
 
 /**
  * Guest middleware is used to deny access to routes that should

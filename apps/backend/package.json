@@ -8,6 +8,7 @@
     "#app/*": "./app/*.js",
     "#core/*": "./app/core/*.js",
     "#identity/*": "./app/identity/*.js",
+    "#shared/*": "./app/shared/*.js",
     "#generated/*": "./.adonisjs/server/*.js",
     "#providers/*": "./providers/*.js",
     "#database/*": "./database/*.js",
