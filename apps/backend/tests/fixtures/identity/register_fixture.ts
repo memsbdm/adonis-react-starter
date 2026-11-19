@@ -3,7 +3,7 @@ import { make } from '#app/core/utils/index'
 import { withTransaction } from '#app/core/utils/transaction'
 import { IdentityFixture } from './identity_fixture.ts'
 import User from '#app/identity/models/user'
-import type { EmailAlreadyInUse } from '#app/identity/exceptions/email_already_in_use_exception'
+import { EmailAlreadyInUse } from '#app/identity/exceptions/email_already_in_use_exception'
 
 interface RegisterParams {
   fullName: string
@@ -44,7 +44,7 @@ export class RegisterFixture extends IdentityFixture {
   }
 
   thenTheEmailAlreadyInUseShouldBeReturned(payload: User | EmailAlreadyInUse) {
-    this.assert.typeOf(payload, 'EmailAlreadyInUse')
+    this.assert.instanceOf(payload, EmailAlreadyInUse)
   }
 
   async #register(overrides: Partial<RegisterParams> = {}) {
